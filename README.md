@@ -24,7 +24,7 @@ This program is a chart app that shows information about top addresses holding t
 <img src="./screenshots/Bar_chart.png">
 
 **API from** `https://api.ethplorer.io`
-<img src="./screenshots/API.png">
+<img src="./screenshots/api.png">
 
 `https://github.com/EverexIO/Ethplorer/wiki/Ethplorer-API#get-top-token-holders`
 ### License
