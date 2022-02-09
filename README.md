@@ -18,10 +18,10 @@ This program is a chart app that shows information about top addresses holding t
 <img src="./screenshots/Bar_chart.png">
 
 ***pie chart***
-<img src="./screenshots/Bar_chart.png">
+<img src="./screenshots/Pie_chart.png">
 
 ***line chart***
-<img src="./screenshots/Bar_chart.png">
+<img src="./screenshots/Line_chart.png">
 
 **API from** `https://api.ethplorer.io`
 <img src="./screenshots/api.png">
