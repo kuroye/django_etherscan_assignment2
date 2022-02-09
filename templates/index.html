@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
+    <title>Chart app</title>
+  </head>
+  <body>
+
+  <div class="container">
+      <div class="row mt-2">
+                <div class="col-md">
+                    <canvas id="myBarChart" width="400" height="400"></canvas>
+                        <script>
+                        const ctx1 = document.getElementById('myBarChart').getContext('2d');
+                        const myBarChart = new Chart(ctx1, {
+                            type: 'bar',
+                            data: {
+                                labels: [{% for a in address %}
+                                    '{{ a }}',
+                                    {% endfor %}],
+                                datasets: [{
+                                    label: '# of Balance',
+                                    data: [{% for b in balance %}
+                                    {{ b }},
+                                    {% endfor %}],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)',
+                                        'rgba(205, 120, 54, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(205, 120, 54, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                        </script>
+                </div>
+                <div class="col-md" style="padding-top: 100px">
+                   <canvas id="myPieChart" width="400" height="400"></canvas>
+                        <script>
+                        const ctx2 = document.getElementById('myPieChart').getContext('2d');
+                        const myPieChart = new Chart(ctx2, {
+                            type: 'pie',
+                            data: {
+                                labels: [
+                                    {% for a in address %}
+                                    '{{ a }}',
+                                    {% endfor %}
+                                ],
+                                datasets: [{
+                                    label: '# of Balance',
+                                    data: [{% for b in balance %}
+                                    {{ b }},
+                                    {% endfor %}],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                        </script>
+                </div>
+                <div class="col-md" style="padding-top: 100px">
+                    <canvas id="myLineChart" width="400" height="400"></canvas>
+                        <script>
+                        const ctx3 = document.getElementById('myLineChart').getContext('2d');
+                        const myLineChart = new Chart(ctx3, {
+                            type: 'line',
+                            data: {
+                                labels: [{% for a in address %}
+                                    '{{ a }}',
+                                    {% endfor %}],
+                                datasets: [{
+                                    label: '# of Balance ',
+                                    data: [{% for b in balance %}
+                                    {{ b }},
+                                    {% endfor %}],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                        </script>
+                </div>
+        </div>
+  </div>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  </body>
+</html>
